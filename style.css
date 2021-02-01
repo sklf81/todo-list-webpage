@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+    --scrollbarBG:  #555556;
+    --thumbBG: #90A4AE;
+}
+
+body{
+    background-color: #1E1E1E;
+}
+
+.tab{
+    background-color: #555556;
+    width: 31%;
+    height: 800px;
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-left: 1%;
+    float: left;
+}
+
+.tab_content{
+    margin-top: 75px;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 725px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+.tab_content::-webkit-scrollbar {
+    width: 11px;
+}
+
+.tab_content::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+
+.tab_content::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+}
+
+button[name="button_shiftentry"]{
+    display: inline;
+    background-color: #AAAAAA;
+    color: #FEFEFE;
+  
+    margin-right: 20px;
+
+    border-style: solid;
+    border-width: 0px;
+  
+    width: 40px;
+    height: 20px;
+    margin-top: 4px;
+    font-size: 60%;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    float: right;
+
+}
+.entry{
+    display: block;
+    height: 30px;
+    width: 585px;
+    overflow: hidden;
+    margin-left: 6px;
+    margin-bottom: 5px;
+    background-color: #666666;
+}
+.entry_content{
+    display: table-cell;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    font-family: 'Roboto';
+    color: #FEFEFE;
+}
+
+.tabtitle{
+    position: fixed;
+    margin-bottom: 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 40px;
+    width: 31%;
+    font-style: normal;
+    text-align: center;
+    text-anchor: middle;
+    color: #FEFEFE;
+}
+
+::placeholder{
+    color: #DDDDDD;
+}
+
+input[type="text"]{
+    border-style: solid;
+    border-color: #555556;
+    color: #FEFEFE;
+    width: 300px;
+    height: 30px;
+    background-color: #555556;
+}
+
+input[type="text"]:hover{
+    border-style: solid;
+    border-color: #555556;
+    color: #1E1E1E;
+    background-color: #777777;
+    width: 300px;
+    height: 30px;
+}
+
+input[type="submit"]{
+    border-style: solid;
+    border-color: #555556;
+    background-color: #FEFEFE;
+    color: #1E1E1E;
+    margin-top: 5px;
+    width: 308px;
+    height: 30px;
+    
+}
+
+input[type="submit"]:hover{
+    border-style: solid;
+    border-color: #555556;
+    background-color: #333333;
+    color: #FEFEFE;
+    margin-top: 5px;
+    width: 308px;
+    height: 30px;
+    
+}
+
+.newentry{
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    margin-top: 850px;
+    left: 81.5%;
+    margin-right: 1%;
+    display: block;
+}
+
+.selectlist:hover div[name="lists"]{
+    position: absolute;
+    display: inline;
+    margin-top: -75px;
+    margin-left: 300px;
+    height: 80px;
+    width: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG)  #1E1E1E;
+}
+
+div[name="lists"]::-webkit-scrollbar {
+    width: 11px;
+}
+
+div[name="lists"]::-webkit-scrollbar-track {
+    background:  #1E1E1E;
+}
+
+div[name="lists"]::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid #1E1E1E;
+}
+
+div[name="lists"]:hover{
+    display: inline;
+}
+
+.selectlist{ 
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    margin-top: 850px;
+    left: 5px;
+    margin-left: 1%;
+    margin-right: -50%;
+    display: block;
+}
+
+div[name="lists"]{
+    display: none;
+}
+
+.lists_button{
+    border-style: solid;
+    border-color: #1E1E1E;
+    background-color:#555556;
+    color: #FEFEFE;
+    margin-top: 5px;
+    width: 240px;
+    height: 20px;
+    margin-left: 30px;
+    display: block;
+}
+
+.lists_button:hover{
+    border-color: #555556;
+    color: #1E1E1E;
+    background-color: #777777;
+}
