@@ -6,7 +6,7 @@
         fseek($filehandler, 0, SEEK_SET);
         $line = 0;
 
-        for($i = 0; $i <= $end; $i++){ 
+        for($i = 0; $i < $end; $i++){ 
             $current_char = fgetc($filehandler);
             $lines[$line]["content"] .= $current_char;
             $lines[$line]["index"] = $line;

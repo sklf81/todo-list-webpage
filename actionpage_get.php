@@ -47,7 +47,7 @@
 
     function manageNewEntry($entry, $filehandler){
         if($entry === ""){
-            header("Location: http://127.0.0.69:8000/index.php");
+            header("Location: /todo/index.php");
             exit();
         }
 
@@ -58,14 +58,14 @@
     }
 
     if($_SERVER["REQUEST_METHOD"] == "GET"){
-        if($_GET["submit_entry"]){
+        if(isset($_GET["submit_entry"])){
             $file = fopen($listname, "a+");
-            $entry_string = manageNewEntry($_GET["todo_input"], $todo_file);
+            $entry_string = manageNewEntry($_GET["todo_input"], $file);
             fwrite($file, $entry_string);
             fclose($file);
         }
 
-        else if($_GET["submit_list"]){
+        else if(isset($_GET["submit_list"])){
             if($_GET["list_input"] == "" || $_GET["list_input"] == "&#92"){
                 $filename = $globalvars["listname"];
             }
@@ -79,7 +79,7 @@
             }
         }
         
-        else if($_GET["button_selectlist"]){
+        else if(isset($_GET["button_selectlist"])){
             writeSelectedListInJSONFile($globalvars["root_lists"].$_GET["button_selectlist"].".tdls", $sitedata_filename);
         }
 
@@ -88,7 +88,8 @@
             incrementStateOfEntry($file, $entry_index);
             fclose($file);
         }
-        header("Location: http://127.0.0.69:8000/index.php");
+
+        header("Location: /todo/index.php");
         exit();
     }
 
