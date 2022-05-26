@@ -46,11 +46,6 @@
     }
 
     function manageNewEntry($entry, $filehandler){
-        if($entry === ""){
-            header("Location: /todo/index.php");
-            exit();
-        }
-
         $output = strip_tags($entry);
         $output = "T".$output."  ".date("d.m.y")."\r\n";
 
@@ -59,6 +54,10 @@
 
     if($_SERVER["REQUEST_METHOD"] == "GET"){
         if(isset($_GET["submit_entry"])){
+            if($_GET["todo_input"] === ""){
+                header("Location: /todo/index.php");
+                exit();
+            }
             $file = fopen($listname, "a+");
             $entry_string = manageNewEntry($_GET["todo_input"], $file);
             fwrite($file, $entry_string);
