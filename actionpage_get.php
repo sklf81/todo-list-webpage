@@ -12,7 +12,7 @@
         $array_length = count($lines);
         $output = "";
         for($i = 0; $i < $array_length; $i++){
-            $output .= $lines[$i];
+            $output .= $lines[$i]["content"];
         }
         return $output;
     }
@@ -34,15 +34,9 @@
             default:       
         }
 
-        $lines_contents = array();
-        $array_length = count($lines);
-        for($i = 0; $i < $array_length; $i++){
-            $lines_contents[$i] = $lines[$i]["content"]; 
-        }
-
         ftruncate($filehandler, 0);
         fseek($filehandler, 0, SEEK_SET);
-        fwrite($filehandler, joinLinesToString($lines_contents));
+        fwrite($filehandler, joinLinesToString($lines));
     }
 
     function manageNewEntry($entry, $filehandler){
@@ -56,9 +50,9 @@
         if(isset($_GET["submit_entry"])){
             if($_GET["todo_input"] === ""){
                 header("Location: /todo/index.php");
-                exit();
             }
             $file = fopen($listname, "a+");
+            echo($_GET["todo_input"]);
             $entry_string = manageNewEntry($_GET["todo_input"], $file);
             fwrite($file, $entry_string);
             fclose($file);
@@ -89,7 +83,6 @@
         }
 
         header("Location: /todo/index.php");
-        exit();
     }
 
     function writeSelectedListInJSONFile($filename, $json_filename){

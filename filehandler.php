@@ -1,18 +1,22 @@
 <?php
     function getLines($filehandler){
         $lines = array();
-        fseek($filehandler, -1, SEEK_END);
+        fseek($filehandler, 0, SEEK_END);
         $end = ftell($filehandler);
         fseek($filehandler, 0, SEEK_SET);
         $line = 0;
 
         for($i = 0; $i < $end; $i++){ 
             $current_char = fgetc($filehandler);
-            $lines[$line]["content"] .= $current_char;
-            $lines[$line]["index"] = $line;
-            if($current_char === "\n"){
+            if($current_char == "\n"){
+                $lines[$line]["content"] .= $current_char;
+                $lines[$line]["index"] = $line;
                 $line++;
             }
+            else{
+                $lines[$line]["content"] .= $current_char;
+                $lines[$line]["index"] = $line;
+            }     
         }
         return $lines;
     }
