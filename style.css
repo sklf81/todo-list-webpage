@@ -24,7 +24,7 @@ body{
     margin-top: 75px;
     overflow: scroll;
     overflow-x: hidden;
-    height: 725px;
+    height: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
@@ -53,7 +53,7 @@ button[name="button_shiftentry"]{
     border-style: solid;
     border-width: 0px;
   
-    width: 40px;
+    width: 7%;
     height: 20px;
     margin-top: 4px;
     font-size: 60%;
@@ -64,10 +64,14 @@ button[name="button_shiftentry"]{
     float: right;
 
 }
+button[name="button_shiftentry"]:hover{
+    color: #AAAAAA;
+    background-color: #FEFEFE;
+}
 .entry{
     display: block;
     height: 30px;
-    width: 585px;
+    width: 100%;
     overflow: hidden;
     margin-left: 6px;
     margin-bottom: 5px;
@@ -83,12 +87,13 @@ button[name="button_shiftentry"]{
 }
 
 .tabtitle{
-    position: fixed;
+    position: relative;
     margin-bottom: 10px;
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
     font-size: 40px;
-    width: 31%;
+    margin-top: 20px;
+    width: 100%;
     font-style: normal;
     text-align: center;
     text-anchor: middle;
