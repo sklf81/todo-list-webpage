@@ -42,21 +42,21 @@
         <title>TODO</title>
     </head>
     <body>
-        <div class="tab" name="todo_tab"><div class="tabtitle">Todo</div>
+        <div class="tab" id="todo_tab" name="todo_tab"><div class="tabtitle">Todo</div>
             <div class="tab_content">
                 <?php
                     displayEntries($entries_todo, $mask_todo);
                 ?>
             </div>
         </div>  
-        <div class="tab" id="progress_tab"><div class="tabtitle">In Progress</div>
+        <div class="tab" id="progress_tab" name="progress_tab"><div class="tabtitle">In Progress</div>
             <div class="tab_content">
                 <?php
                     displayEntries($entries_progress, $mask_progress);
                 ?>
             </div>
         </div>
-        <div class="tab" id="progress_tab"><div class="tabtitle">Done</div>
+        <div class="tab" id="done_tab" name="done_tab"><div class="tabtitle">Done</div>
             <div class="tab_content">
                 <?php
                     displayEntries($entries_done, $mask_done);
