@@ -1,1 +1,113 @@
+body{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 90% 10%;
+    background-color: #1f2f3f;
+}
 
+.tab{
+    background-color: #919f9f;
+    width: 95%;
+    margin-left: 2%;
+}
+
+.tab_content{
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 85%;
+    scrollbar-width: thin;
+    scrollbar-color: #90A4AE #555556;
+}
+
+.tab_content::-webkit-scrollbar {
+    width: 11px;
+}
+
+.tab_content::-webkit-scrollbar-track {
+    background: #555556;
+}
+
+.tab_content::-webkit-scrollbar-thumb {
+    background-color: #90A4AE ;
+    border-radius: 6px;
+    border: 3px solid #555556;
+}
+
+.tabtitle{
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 2.5%;
+    color: white;
+    text-align: center;
+}
+
+.todo_entry_button, .progress_entry_button, .done_entry_button{
+    position: relative;
+    height: 2rem;
+    width: 10%;
+    float: right;
+    right: 10px;   
+    margin-top: 0.5rem;
+    border: none;
+    font-family: Bahnschrift;
+    color: white;
+    background-color: #663d66;
+    filter: drop-shadow(2px 3px 0px black);
+}
+
+.todo_entry_button:hover, .progress_entry_button:hover, .done_entry_button:hover{
+    color: black;
+    background-color: white;
+}
+
+.entry{
+    background-color: #003d4d;
+    margin: 0.25rem;
+    padding: 0.25rem;
+    height: 3rem;
+}
+
+.entry_content{
+    font-family: Bahnschrift;
+    color: white;
+    vertical-align: middle;
+}
+
+.selectlist{
+    display: grid;
+    grid-row: 2/3;
+    grid-column: 3/4;
+    margin: 2.5%;
+}
+
+.newentry{
+    display: grid;
+    grid-row: 2/3;
+    grid-column: 1/2;
+
+    margin: 2.5%;
+}
+
+div[name="lists"]{
+    display: none;
+    height: 5rem;
+    width: 34rem;
+}
+
+.lists_button{
+    margin: 0.1rem;
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    width: 95%;
+}
+
+.selectlist:hover div[name="lists"]{
+    position: absolute;
+    display: inline;
+    height: 8rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color:   #90A4AE;
+}
