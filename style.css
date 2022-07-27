@@ -1,32 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-html {
-    --scrollbarBG:  #555556;
-    --thumbBG: #90A4AE;
-}
-
 body{
-    background-color: #1E1E1E;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 90% 10%;
+    background-color: #1f2f3f;
 }
 
 .tab{
-    background-color: #555556;
-    width: 31%;
-    height: 800px;
-    margin-top: 1%;
-    margin-right: 1%;
-    margin-left: 1%;
-    float: left;
+    background-color: #11555f;
+    width: 95%;
+    margin-left: 2%;
 }
 
 .tab_content{
-    margin-top: 75px;
     overflow: scroll;
     overflow-x: hidden;
-    height: auto;
+    height: 85%;
     scrollbar-width: thin;
-    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    scrollbar-color: ##557766 #555556;
 }
 
 .tab_content::-webkit-scrollbar {
@@ -34,186 +24,162 @@ body{
 }
 
 .tab_content::-webkit-scrollbar-track {
-    background: var(--scrollbarBG);
+    background: #555556;
 }
 
 .tab_content::-webkit-scrollbar-thumb {
-    background-color: var(--thumbBG) ;
+    background-color: #90A4AE ;
     border-radius: 6px;
-    border: 3px solid var(--scrollbarBG);
-}
-
-button[name="button_shiftentry"]{
-    display: inline;
-    background-color: #AAAAAA;
-    color: #FEFEFE;
-  
-    margin-right: 20px;
-
-    border-style: solid;
-    border-width: 0px;
-  
-    width: 7%;
-    height: 20px;
-    margin-top: 4px;
-    font-size: 60%;
-    text-align: center;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: bold;
-    float: right;
-
-}
-button[name="button_shiftentry"]:hover{
-    color: #AAAAAA;
-    background-color: #FEFEFE;
-}
-.entry{
-    display: block;
-    height: 30px;
-    width: 100%;
-    overflow: hidden;
-    margin-left: 6px;
-    margin-bottom: 5px;
-    background-color: #666666;
-}
-.entry_content{
-    display: table-cell;
-    margin-left: 10px;
-    margin-bottom: 0px;
-    vertical-align: middle;
-    font-family: 'Roboto';
-    color: #FEFEFE;
+    border: 3px solid #555556;
 }
 
 .tabtitle{
-    position: relative;
-    margin-bottom: 10px;
-    font-family: 'Roboto Mono', monospace;
+    font-family: Helvetica;
     font-weight: bold;
-    font-size: 40px;
-    margin-top: 20px;
-    width: 100%;
-    font-style: normal;
+    font-size: 3rem;
+    margin-bottom: 2.5%;
+    color: white;
     text-align: center;
-    text-anchor: middle;
-    color: #FEFEFE;
 }
 
-::placeholder{
-    color: #DDDDDD;
+.todo_entry_button, .progress_entry_button, .done_entry_button{
+    position: relative;
+    height: 2rem;
+    width: 10%;
+    float: right;
+    right: 10px;   
+    margin-top: 0.5rem;
+    border: none;
+    font-family: Bahnschrift;
+    color: white;
+    background-color: #663d66;
+    filter: drop-shadow(2px 3px 0px black);
 }
 
-input[type="text"]{
-    border-style: solid;
-    border-color: #555556;
-    color: #FEFEFE;
-    width: 300px;
-    height: 30px;
-    background-color: #555556;
+.todo_entry_button:hover, .progress_entry_button:hover, .done_entry_button:hover{
+    color: black;
+    background-color: white;
 }
 
-input[type="text"]:hover{
-    border-style: solid;
-    border-color: #555556;
-    color: #1E1E1E;
-    background-color: #777777;
-    width: 300px;
-    height: 30px;
+.entry{
+    background-color: #003d4d;
+    margin: 0.25rem;
+    padding: 0.25rem;
+    height: 3rem;
+            overflow: hidden;
 }
 
-input[type="submit"]{
-    border-style: solid;
-    border-color: #555556;
-    background-color: #FEFEFE;
-    color: #1E1E1E;
-    margin-top: 5px;
-    width: 308px;
-    height: 30px;
-    
+.entry_content{
+    font-family: Bahnschrift;
+    color: white;
+    vertical-align: middle;
 }
 
-input[type="submit"]:hover{
-    border-style: solid;
-    border-color: #555556;
-    background-color: #333333;
-    color: #FEFEFE;
-    margin-top: 5px;
-    width: 308px;
-    height: 30px;
-    
+.selectlist{
+    display: grid;
+    grid-row: 2/3;
+    grid-column: 3/4;
+    margin: 2.5%;
 }
 
 .newentry{
-    position: absolute;
-    width: 300px;
-    height: 30px;
-    margin-top: 850px;
-    left: 81.5%;
-    margin-right: 1%;
-    display: block;
-}
+    display: grid;
+    grid-row: 2/3;
+    grid-column: 1/2;
 
-.selectlist:hover div[name="lists"]{
-    position: absolute;
-    display: inline;
-    margin-top: -75px;
-    margin-left: 300px;
-    height: 80px;
-    width: 300px;
-    overflow: scroll;
-    overflow-x: hidden;
-    scrollbar-width: thin;
-    scrollbar-color: var(--thumbBG)  #1E1E1E;
-}
-
-div[name="lists"]::-webkit-scrollbar {
-    width: 11px;
-}
-
-div[name="lists"]::-webkit-scrollbar-track {
-    background:  #1E1E1E;
-}
-
-div[name="lists"]::-webkit-scrollbar-thumb {
-    background-color: var(--thumbBG) ;
-    border-radius: 6px;
-    border: 3px solid #1E1E1E;
-}
-
-div[name="lists"]:hover{
-    display: inline;
-}
-
-.selectlist{ 
-    position: absolute;
-    width: 300px;
-    height: 30px;
-    margin-top: 850px;
-    left: 5px;
-    margin-left: 1%;
-    margin-right: -50%;
-    display: block;
+    margin: 2.5%;
 }
 
 div[name="lists"]{
     display: none;
+    height: 5rem;
+    width: 34rem;
+    margin-top: 1rem;
 }
 
 .lists_button{
-    border-style: solid;
-    border-color: #1E1E1E;
-    background-color:#555556;
-    color: #FEFEFE;
-    margin-top: 5px;
-    width: 240px;
-    height: 20px;
-    margin-left: 30px;
-    display: block;
+    background-color: #003d4d;
+    border: none;
+    font-family: Bahnschrift;
+    color: white;
+    filter: drop-shadow(2px 3px 0px black);
+    margin: 0.1rem;
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    width: 95%;
+    height: 2rem;
 }
 
-.lists_button:hover{
-    border-color: #555556;
-    color: #1E1E1E;
-    background-color: #777777;
+.selectlist:hover div[name="lists"]{
+    position: absolute;
+    display: block;
+    height: 8rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color:   #90A4AE;
+}
+
+#todo_input, #list_input{
+    width: 30%;
+    font-family: Bahnschrift;
+    filter: drop-shadow(2px 3px 0px black);
+}
+
+input[type="submit"]{
+    width: auto;
+    height: 1.3rem;
+    border: none;
+    font-family: Bahnschrift;
+    color: white;
+    background-color: #663d66;
+    filter: drop-shadow(2px 3px 0px black);
+}
+
+input[type="submit"]:hover{
+    color: black;
+    background-color: white;
+}
+
+@media screen and (max-width: 1000px){
+    .entry{
+        height: 5rem;
+    }
+    .entry_content{
+        display: block;
+        font-size: 0.5rem;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 1.5rem;
+    }
+    .tabtitle{
+        font-size: 1rem;
+    }
+    .todo_entry_button, .progress_entry_button, .done_entry_button{
+        font-size: 0.5rem;
+        height: 1rem;
+        width: 85%;
+        float: right;
+        margin-top: 0;
+    }
+    
+    #todo_input{
+        width: 90%;
+        font-size: 0.75rem;
+        
+    }
+    #list_input{
+        grid-row: 1/2;
+        width: 90%;
+        font-size: 0.75rem;
+    }
+    div[name="lists"]{
+        display: block;
+        height: 5rem;
+        width: 6rem;
+    }
+
+    .tab{
+        height: 40%;
+    }
 }
