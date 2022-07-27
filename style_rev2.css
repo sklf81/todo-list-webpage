@@ -113,6 +113,27 @@ div[name="lists"]{
     scrollbar-color:   #90A4AE;
 }
 
+#todo_input, #list_input{
+    width: 30%;
+    font-family: Bahnschrift;
+    filter: drop-shadow(2px 3px 0px black);
+}
+
+input[type="submit"]{
+    width: auto;
+    height: 1.3rem;
+    border: none;
+    font-family: Bahnschrift;
+    color: white;
+    background-color: #663d66;
+    filter: drop-shadow(2px 3px 0px black);
+}
+
+input[type="submit"]:hover{
+    color: black;
+    background-color: white;
+}
+
 @media screen and (max-width: 1000px){
     .entry{
         height: 5rem;
