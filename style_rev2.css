@@ -1,12 +1,21 @@
+:root{
+	--body_color: #1f2f3f;
+	--tab_color: #919f9f;
+	--scrollbar_track_color: #90A4AE;
+	--scrollbar_thumb_color: #555556;
+	--shift_button_color: #663d66;
+	--entry_color: #003d4d;
+	--submit_color: #663d66;
+}
 body{
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 90% 10%;
-    background-color: #1f2f3f;
+    background-color: var(--body_color);
 }
 
 .tab{
-    background-color: #919f9f;
+    background-color: var(--tab_color);
     width: 95%;
     margin-left: 2%;
 }
@@ -16,7 +25,7 @@ body{
     overflow-x: hidden;
     height: 85%;
     scrollbar-width: thin;
-    scrollbar-color: #90A4AE #555556;
+    scrollbar-color: var(--scrollbar_track_color) var(--scrollbar_thumb_color);
 }
 
 .tab_content::-webkit-scrollbar {
@@ -24,13 +33,13 @@ body{
 }
 
 .tab_content::-webkit-scrollbar-track {
-    background: #555556;
+    background: var(--scrollbar_thumb_color);
 }
 
 .tab_content::-webkit-scrollbar-thumb {
-    background-color: #90A4AE ;
+    background-color: var(--scrollbar_track_color);
     border-radius: 6px;
-    border: 3px solid #555556;
+    border: 3px solid var(--scrollbar_thumb_color);
 }
 
 .tabtitle{
@@ -52,7 +61,7 @@ body{
     border: none;
     font-family: Bahnschrift;
     color: white;
-    background-color: #663d66;
+    background-color: var(--shift_button_color);
     filter: drop-shadow(2px 3px 0px black);
 }
 
@@ -62,11 +71,11 @@ body{
 }
 
 .entry{
-    background-color: #003d4d;
+    background-color: var(--entry_color);
     margin: 0.25rem;
     padding: 0.25rem;
     height: 3rem;
-            overflow: hidden;
+    overflow: hidden;
 }
 
 .entry_content{
@@ -110,7 +119,7 @@ div[name="lists"]{
     overflow: scroll;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color:   #90A4AE;
+    scrollbar-color:   var(--scrollbar_track_color);
 }
 
 #todo_input, #list_input{
@@ -125,7 +134,7 @@ input[type="submit"]{
     border: none;
     font-family: Bahnschrift;
     color: white;
-    background-color: #663d66;
+    background-color: var(--submit_color);
     filter: drop-shadow(2px 3px 0px black);
 }
 
@@ -154,5 +163,17 @@ input[type="submit"]:hover{
         width: 85%;
         float: right;
         margin-top: 0;
+    }
+    #todo_input{
+        margin-top: 1rem;
+        width: 90%;
+    }
+    #list_input{
+        margin-top: 1rem;
+        width: 90%;
+    }
+    input[type="submit"]{
+        
+        margin: 0.5rem;;
     }
 }
