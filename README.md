@@ -7,4 +7,4 @@ To set up the website you can either use the website on a usual webserver or, li
 This is just the TODO-List of an ordinary austrian high school student
 ![Image of TDLS](https://github.com/sklf81/todo-list-webpage/blob/main/working-principle.png)
 Using the 'style_rev_2_.css' stylesheet mobile compatibility is assured and the style looks a lot more pleasing
-![Image of TDLS](https://github.com/sklf81/todo-list-webpage/blob/main/style_rev_2.png)
+![Image of TDLS]([https://github.com/sklf81/todo-list-webpage/blob/main/style_rev_2.png](https://github.com/sklf81/todo-list-webpage/blob/main/style_rev_2.PNG))
