@@ -100,9 +100,15 @@ body{
 }
 
 div[name="lists"]{
-    display: none;
-    height: 5rem;
-    width: 34rem;
+    position: relative;
+    display: inline-block;
+    top: 1rem;
+    height: 8rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color:   var(--scrollbar_track_color);
+    width: 100%;
 }
 
 .lists_button{
@@ -110,25 +116,39 @@ div[name="lists"]{
     margin-left: 0.5rem;
     font-size: 0.75rem;
     width: 95%;
+    border: none;
+    background-color: var(--tab_color);
+    color: white;
 }
 
+/*
 .selectlist:hover div[name="lists"]{
-    position: absolute;
-    display: inline;
+    position: relative;
+    display: inline-block;
+    top: 1rem;
     height: 8rem;
+    width: 100%;
     overflow: scroll;
     overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color:   var(--scrollbar_track_color);
 }
+*/
 
 #todo_input, #list_input{
-    width: 30%;
+    width: 100%;
     font-family: Bahnschrift;
     filter: drop-shadow(2px 3px 0px black);
 }
 
+#list_input{
+    float: right;
+    display: inline-block;
+}
+
 input[type="submit"]{
+    display: inline;
+    float: right;
     width: auto;
     height: 1.3rem;
     border: none;
