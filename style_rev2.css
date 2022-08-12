@@ -18,7 +18,6 @@ body{
     background-color: var(--tab_color);
     width: 95%;
     margin-left: 2%;
-	height: 680px;
 }
 
 .tab_content{
@@ -100,18 +99,6 @@ body{
     margin: 2.5%;
 }
 
-div[name="lists"]{
-    position: relative;
-    display: inline-block;
-    top: 1rem;
-    height: 8rem;
-    overflow: scroll;
-    overflow-x: hidden;
-    scrollbar-width: thin;
-    scrollbar-color:   var(--scrollbar_track_color);
-    width: 100%;
-}
-
 .lists_button{
     margin: 0.1rem;
     margin-left: 0.5rem;
@@ -119,37 +106,42 @@ div[name="lists"]{
     width: 95%;
     border: none;
     background-color: var(--tab_color);
+    border: 1px solid transparent;
     color: white;
 }
 
-/*
-.selectlist:hover div[name="lists"]{
+.lists_button:hover{
+    background-color: var(--body_color);
+        border: 1px solid white;
+}
+
+div[name="lists"]{
     position: relative;
-    display: inline-block;
-    top: 1rem;
+    top: 25px;
     height: 8rem;
-    width: 100%;
     overflow: scroll;
     overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color:   var(--scrollbar_track_color);
 }
-*/
 
 #todo_input, #list_input{
-    width: 100%;
+    width: 30%;
     font-family: Bahnschrift;
     filter: drop-shadow(2px 3px 0px black);
 }
 
 #list_input{
-    float: right;
-    display: inline-block;
+    width: 68%;
+    margin-left: 8%;
+}
+
+#todo_input{
+    width: 68%;
+    margin-left: 8%;
 }
 
 input[type="submit"]{
-    display: inline;
-    float: right;
     width: auto;
     height: 1.3rem;
     border: none;
