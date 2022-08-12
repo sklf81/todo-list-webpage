@@ -18,6 +18,7 @@ body{
     background-color: var(--tab_color);
     width: 95%;
     margin-left: 2%;
+	height: 680px;
 }
 
 .tab_content{
