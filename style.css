@@ -16,15 +16,15 @@ body{
 
 .tab{
     background-color: var(--tab_color);
-    width: 85%;
-	height: 680px;
+    width: 95%;
+    height: 800px;
     margin-left: 2%;
 }
 
 .tab_content{
-    overflow-y: scroll;
+    overflow: scroll;
     overflow-x: hidden;
-    height: 95%;
+    height: 85%;
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar_track_color) var(--scrollbar_thumb_color);
 }
