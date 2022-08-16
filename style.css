@@ -16,7 +16,8 @@ body{
 
 .tab{
     background-color: var(--tab_color);
-    width: 680px;
+    width: 85%;
+	height: 680px;
     margin-left: 2%;
 }
 
