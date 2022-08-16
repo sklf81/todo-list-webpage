@@ -1,21 +1,12 @@
-:root{
-	--body_color: #1f2f3f;
-	--tab_color: #919f9f;
-	--scrollbar_track_color: #90A4AE;
-	--scrollbar_thumb_color: #555556;
-	--shift_button_color: #663d66;
-	--entry_color: #003d4d;
-	--submit_color: #663d66;
-}
 body{
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 90% 10%;
-    background-color: var(--body_color);
+    background-color: #1f2f3f;
 }
 
 .tab{
-    background-color: var(--tab_color);
+    background-color: #11555f;
     width: 95%;
     margin-left: 2%;
 }
@@ -25,7 +16,7 @@ body{
     overflow-x: hidden;
     height: 85%;
     scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar_track_color) var(--scrollbar_thumb_color);
+    scrollbar-color: ##557766 #555556;
 }
 
 .tab_content::-webkit-scrollbar {
@@ -33,13 +24,13 @@ body{
 }
 
 .tab_content::-webkit-scrollbar-track {
-    background: var(--scrollbar_thumb_color);
+    background: #555556;
 }
 
 .tab_content::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar_track_color);
+    background-color: #90A4AE ;
     border-radius: 6px;
-    border: 3px solid var(--scrollbar_thumb_color);
+    border: 3px solid #555556;
 }
 
 .tabtitle{
@@ -61,7 +52,7 @@ body{
     border: none;
     font-family: Bahnschrift;
     color: white;
-    background-color: var(--shift_button_color);
+    background-color: #663d66;
     filter: drop-shadow(2px 3px 0px black);
 }
 
@@ -71,11 +62,11 @@ body{
 }
 
 .entry{
-    background-color: var(--entry_color);
+    background-color: #003d4d;
     margin: 0.25rem;
     padding: 0.25rem;
     height: 3rem;
-    overflow: hidden;
+            overflow: hidden;
 }
 
 .entry_content{
@@ -99,30 +90,34 @@ body{
     margin: 2.5%;
 }
 
+div[name="lists"]{
+    display: none;
+    height: 5rem;
+    width: 34rem;
+    margin-top: 1rem;
+}
+
 .lists_button{
+    background-color: #003d4d;
+    border: none;
+    font-family: Bahnschrift;
+    color: white;
+    filter: drop-shadow(2px 3px 0px black);
     margin: 0.1rem;
     margin-left: 0.5rem;
     font-size: 0.75rem;
     width: 95%;
-    border: none;
-    background-color: var(--tab_color);
-    border: 1px solid transparent;
-    color: white;
+    height: 2rem;
 }
 
-.lists_button:hover{
-    background-color: var(--body_color);
-        border: 1px solid white;
-}
-
-div[name="lists"]{
-    position: relative;
-    top: 25px;
+.selectlist:hover div[name="lists"]{
+    position: absolute;
+    display: block;
     height: 8rem;
     overflow: scroll;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color:   var(--scrollbar_track_color);
+    scrollbar-color:   #90A4AE;
 }
 
 #todo_input, #list_input{
@@ -131,23 +126,13 @@ div[name="lists"]{
     filter: drop-shadow(2px 3px 0px black);
 }
 
-#list_input{
-    width: 68%;
-    margin-left: 8%;
-}
-
-#todo_input{
-    width: 68%;
-    margin-left: 8%;
-}
-
 input[type="submit"]{
     width: auto;
     height: 1.3rem;
     border: none;
     font-family: Bahnschrift;
     color: white;
-    background-color: var(--submit_color);
+    background-color: #663d66;
     filter: drop-shadow(2px 3px 0px black);
 }
 
@@ -177,16 +162,24 @@ input[type="submit"]:hover{
         float: right;
         margin-top: 0;
     }
+    
     #todo_input{
-        margin-top: 1rem;
         width: 90%;
+        font-size: 0.75rem;
+        
     }
     #list_input{
-        margin-top: 1rem;
+        grid-row: 1/2;
         width: 90%;
+        font-size: 0.75rem;
     }
-    input[type="submit"]{
-        
-        margin: 0.5rem;;
+    div[name="lists"]{
+        display: block;
+        height: 5rem;
+        width: 6rem;
+    }
+
+    .tab{
+        height: 40%;
     }
 }

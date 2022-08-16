@@ -1,22 +1,31 @@
+:root{
+	--body_color: #1f2f3f;
+	--tab_color: #919f9f;
+	--scrollbar_track_color: #90A4AE;
+	--scrollbar_thumb_color: #555556;
+	--shift_button_color: #663d66;
+	--entry_color: #003d4d;
+	--submit_color: #663d66;
+}
 body{
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 90% 10%;
-    background-color: #1f2f3f;
+    background-color: var(--body_color);
 }
 
 .tab{
-    background-color: #11555f;
+    background-color: var(--tab_color);
     width: 95%;
     margin-left: 2%;
 }
 
 .tab_content{
-    overflow: scroll;
+    overflow-y: scroll;
     overflow-x: hidden;
-    height: 85%;
+    height: 680px;
     scrollbar-width: thin;
-    scrollbar-color: ##557766 #555556;
+    scrollbar-color: var(--scrollbar_track_color) var(--scrollbar_thumb_color);
 }
 
 .tab_content::-webkit-scrollbar {
@@ -24,13 +33,13 @@ body{
 }
 
 .tab_content::-webkit-scrollbar-track {
-    background: #555556;
+    background: var(--scrollbar_thumb_color);
 }
 
 .tab_content::-webkit-scrollbar-thumb {
-    background-color: #90A4AE ;
+    background-color: var(--scrollbar_track_color);
     border-radius: 6px;
-    border: 3px solid #555556;
+    border: 3px solid var(--scrollbar_thumb_color);
 }
 
 .tabtitle{
@@ -52,7 +61,7 @@ body{
     border: none;
     font-family: Bahnschrift;
     color: white;
-    background-color: #663d66;
+    background-color: var(--shift_button_color);
     filter: drop-shadow(2px 3px 0px black);
 }
 
@@ -62,11 +71,11 @@ body{
 }
 
 .entry{
-    background-color: #003d4d;
+    background-color: var(--entry_color);
     margin: 0.25rem;
     padding: 0.25rem;
     height: 3rem;
-            overflow: hidden;
+    overflow: hidden;
 }
 
 .entry_content{
@@ -90,34 +99,30 @@ body{
     margin: 2.5%;
 }
 
-div[name="lists"]{
-    display: none;
-    height: 5rem;
-    width: 34rem;
-    margin-top: 1rem;
-}
-
 .lists_button{
-    background-color: #003d4d;
-    border: none;
-    font-family: Bahnschrift;
-    color: white;
-    filter: drop-shadow(2px 3px 0px black);
     margin: 0.1rem;
     margin-left: 0.5rem;
     font-size: 0.75rem;
     width: 95%;
-    height: 2rem;
+    border: none;
+    background-color: var(--tab_color);
+    border: 1px solid transparent;
+    color: white;
 }
 
-.selectlist:hover div[name="lists"]{
-    position: absolute;
-    display: block;
+.lists_button:hover{
+    background-color: var(--body_color);
+        border: 1px solid white;
+}
+
+div[name="lists"]{
+    position: relative;
+    top: 25px;
     height: 8rem;
     overflow: scroll;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color:   #90A4AE;
+    scrollbar-color:   var(--scrollbar_track_color);
 }
 
 #todo_input, #list_input{
@@ -126,13 +131,23 @@ div[name="lists"]{
     filter: drop-shadow(2px 3px 0px black);
 }
 
+#list_input{
+    width: 68%;
+    margin-left: 8%;
+}
+
+#todo_input{
+    width: 68%;
+    margin-left: 8%;
+}
+
 input[type="submit"]{
     width: auto;
     height: 1.3rem;
     border: none;
     font-family: Bahnschrift;
     color: white;
-    background-color: #663d66;
+    background-color: var(--submit_color);
     filter: drop-shadow(2px 3px 0px black);
 }
 
@@ -162,24 +177,16 @@ input[type="submit"]:hover{
         float: right;
         margin-top: 0;
     }
-    
     #todo_input{
+        margin-top: 1rem;
         width: 90%;
-        font-size: 0.75rem;
-        
     }
     #list_input{
-        grid-row: 1/2;
+        margin-top: 1rem;
         width: 90%;
-        font-size: 0.75rem;
     }
-    div[name="lists"]{
-        display: block;
-        height: 5rem;
-        width: 6rem;
-    }
-
-    .tab{
-        height: 40%;
+    input[type="submit"]{
+        
+        margin: 0.5rem;;
     }
 }
