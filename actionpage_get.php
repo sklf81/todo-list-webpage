@@ -39,12 +39,38 @@
         fwrite($filehandler, joinLinesToString($lines));
     }
 
-    function manageNewEntry($entry, $filehandler){
+    function manageNewEntry($entry, $filehandler, $time, $weight){
         $output = strip_tags($entry);
-        $output = "T".$output."  ".date("d.m.y")."\r\n";
+        $output = "T".$output."  ".getImportanceHTML($time, $weight).date("d.m.y")."\r\n";
 
         return $output;
     }
+	
+	function getImportanceHTML($time, $weight){
+		$importance = $time * $weight;
+		
+		if($importance == 50*50){
+			//No specified importance of task
+			return "";
+		}
+		
+		if($importance >= 5000){
+			$div_text = "[vigorous]";
+			$div_color = "red";
+		}
+		else if($importance >= 1000){
+			$div_text = "[moderate]";
+			$div_color = "orange";
+		}
+		else{
+			$div_text = "[chill]";
+			$div_color = "green";
+		}
+		
+		$output = "<div style='display: inline; width: 3rem; height: auto; color: ".$div_color."'>".$div_text."</div> ";
+		
+		return $output;
+	}
 
     if($_SERVER["REQUEST_METHOD"] == "GET"){
         if(isset($_GET["submit_entry"])){
@@ -53,7 +79,7 @@
             }
             $file = fopen($listname, "a+");
             echo($_GET["todo_input"]);
-            $entry_string = manageNewEntry($_GET["todo_input"], $file);
+            $entry_string = manageNewEntry($_GET["todo_input"], $file, $_GET["time"], $_GET["weight"]);
             fwrite($file, $entry_string);
             fclose($file);
         }
