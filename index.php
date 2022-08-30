@@ -64,11 +64,9 @@
         </div>
         <div class="newentry" name="newentry">
             <form action="actionpage_get.php" method="get">
-                <input type="text" autocomplete="off" id="todo_input" name="todo_input" placeholder="New TODO ..."></input>
-				<label for="time" class="slider_label"> Time </label>
-				<input type="range" min="1" max="100" value="50" class="slider" name="time"></input>			
-				<label for="time" class="slider_label"> Weight </label>
-				<input type="range" min="1" max="100" value="50" class="slider" name="weight"></input>
+                <input type="text" autocomplete="off" id="todo_input" name="todo_input" placeholder="New TODO ..."></input>	
+				<label for="time" id="importance_slider_label" class="slider_label"> Importance </label>
+				<input type="range" min="1" max="100" value="50" id="importance_slider" class="slider" name="importance"></input>
                 <input type="submit" name="submit_entry"></input>
             </form>
         </div>
