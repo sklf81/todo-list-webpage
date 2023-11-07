@@ -39,6 +39,15 @@
         fwrite($filehandler, joinLinesToString($lines));
     }
 
+    function deleteEntry($filehandler, $index){
+        $lines = getLines($filehandler);
+        unset($lines[$index]);
+        $lines = array_values($lines);
+        ftruncate($filehandler, 0);
+        fseek($filehandler, 0, SEEK_SET);
+        fwrite($filehandler, joinLinesToString($lines));
+    }
+
     function manageNewEntry($entry, $filehandler, $importance){
         $output = strip_tags($entry);
         $output = "T".$output."  ".getImportanceHTML($importance).date("d.m.y")."\r\n";
@@ -103,6 +112,13 @@
         else if(($entry_index = $_GET["button_shiftentry"])>=0){
             $file = fopen($listname, "r+");
             incrementStateOfEntry($file, $entry_index);
+            fclose($file);
+        }
+        if(isset($_GET["button_deleteentry"])){
+            $entry_index = $_GET["button_deleteentry"];
+            $file = fopen($listname, "r+");
+            echo("DELETE!!");
+            deleteEntry($file, $entry_index);
             fclose($file);
         }
 

@@ -47,12 +47,27 @@
     */
 
     function formatEntry($entry){
-        $output = "<div class='entry' name=".$entry["container_name"].$entry["index"].">
-        <form action=".$entry["actionpage"]." method='get'>
-            <button class=".$entry["button_class"]." name=".$entry["button_name"]." value=".$entry["index"].">".$entry["button_text"]."</button>
-        </form>
-        <div class='entry_content' name=".$entry["content_name"].$entry["index"]."> ".$entry["content"]."</div>
-        </div>";
+        $output ="";
+        if($entry["container_class"] == "done_entry"){
+            $output = "<div class='entry' name=".$entry["container_name"].$entry["index"].">
+            <form action=".$entry["actionpage"]." method='get'>
+                <button class=".$entry["button_class"]." name=".$entry["button_name"]." value=".$entry["index"].">".$entry["button_text"]."</button>
+            </form>
+    
+            <div class='entry_content' name=".$entry["content_name"].$entry["index"]."> ".$entry["content"]."</div>
+            </div>";
+        }
+        else{
+            $output = "<div class='entry' name=".$entry["container_name"].$entry["index"].">
+            <form action=".$entry["actionpage"]." method='get'>
+                <button class=".$entry["button_class"]." name=".$entry["button_name"]." value=".$entry["index"].">".$entry["button_text"]."</button>
+                <button class='done_entry_button' name='button_deleteentry' value=".$entry["index"].">DELETE</button>
+            </form>
+    
+            <div class='entry_content' name=".$entry["content_name"].$entry["index"]."> ".$entry["content"]."</div>
+            </div>";
+        }
+
 
         return $output;
     }
